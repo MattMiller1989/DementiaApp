@@ -1,2 +1,2 @@
 # DementiaApp
-Created with CodeSandbox
+Created by Matt Miller, Will Scheer, and Brandon Olson
