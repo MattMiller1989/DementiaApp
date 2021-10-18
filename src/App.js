@@ -15,6 +15,10 @@ function Link(props) {
 }
 
 function App(props) {
+  console.log(props.tasks);
+  // const taskList = props.tasks.map(task => (
+  //   <Todo id={task.id} name={task.name} taken={task.taken} />
+  // ));
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
@@ -57,11 +61,7 @@ function App(props) {
         role="list"
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading"
-      >
-        <Todo name="blue pill" take={false} />
-        <Todo name="orange pill" take={false} />
-        <Todo name="beer" take={true} />
-      </ul>
+      ></ul>
     </div>
   );
 }
