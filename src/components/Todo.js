@@ -1,18 +1,24 @@
 import React, {useState} from "react";
+import css from "react-native-web/dist/exports/StyleSheet/css";
+
+
 
 export default function Todo(props) {
     const [isEditing, setEditing] = useState(false);
     const [newName, setNewName] = useState('');
+    const [newTime, setNewTime] = useState('');
     function handleChange(e) {
         setNewName(e.target.value);
     }
     function handleSubmit(e) {
         e.preventDefault();
-        props.editTask(props.id, newName);
+        props.editTask(props.id, newName, newTime);
         setNewName("");
+        setNewTime("");
         setEditing(false);
     }
     const editingTemplate = (
+        //TODO: ALSO SOME WORK ON ACCESSIBILITY COULD GO HERE
         <form className="stack-small" onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="todo-label" htmlFor={props.id}>
@@ -36,7 +42,7 @@ export default function Todo(props) {
             </div>
         </form>
     );
-    const viewTemplate = (
+    const viewTemplate = (//TODO: THIS COULD USE SOME WORK. MAKE IT LOOK ALL BIG AND NICE
         <div className="stack-small">
             <div className="c-cb">
                 <input
@@ -46,7 +52,10 @@ export default function Todo(props) {
                     onChange={() => props.toggleTaskCompleted(props.id)}
                 />
                 <label className="todo-label" htmlFor={props.id}>
-                    {props.name}
+                    <span>{props.name} </span>
+
+                    <span style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>{props.time} </span>
+
                 </label>
             </div>
             <div className="btn-group">

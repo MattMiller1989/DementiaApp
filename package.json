@@ -11,6 +11,7 @@
     "react-native": "^0.66.1",
     "react-native-web": "0.17.0",
     "react-scripts": "3.4.1",
+    "react-simple-timefield": "^3.2.5",
     "src": "1.1.2"
   },
   "devDependencies": {},
