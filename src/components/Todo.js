@@ -54,7 +54,7 @@ export default function Todo(props) {
                 <label className="todo-label" htmlFor={props.id}>
                     <span>{props.name} </span>
 
-                    <span style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>{props.time} </span>
+                    <span style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' ,color: 'red'}}>{props.time} </span>
 
                 </label>
             </div>

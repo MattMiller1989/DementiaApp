@@ -24,7 +24,7 @@ function Form(props) {
     <form onSubmit={doSTUFF} id="reminder-form">
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
-          What needs to be done?
+          What is the name of the pill you need to take?
         </label>
       </h2>
             <input

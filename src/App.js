@@ -38,11 +38,25 @@ function App(props) {
         const currTime = currDate.getHours() + ":" + currDate.getMinutes()
 
         tasks.map(task => {
+
             console.log(currTime);
             console.log(task);
-           if(task.time == currTime && task.completed == false){ //Compares the current time to the time that is listed on the task in question. DOes not fire if the task has been completed
-               alert(`IT IS TIME FOR YOU TO TAKE YOUR ${task.name}`) //TODO: UPDATE THIS ALERT SO THAT IT IS FIT FOR DEMENTIA PEOPLE
-               //TODO: Maybe update this so that a modal pops up that allows the user to click it and make the alert go away?
+            console.log(task.completed);
+           if(task.time == currTime && task.completed == false ){ //Compares the current time to the time that is listed on the task in question. DOes not fire if the task has been completed
+              // alert(`IT IS TIME FOR YOU TO TAKE YOUR ${task.name}`)
+                let result = window.confirm( `IT IS TIME FOR YOU TO TAKE YOUR ${task.name} VERIFY THAT YOU HAVE TAKEN THIS PILL!`);
+
+               if ( result ) {
+                   //toggleTaskCompleted(task.id);
+                   task.completed = true;
+
+               } else {
+                   checkTasks();
+               }
+              // checked = true
+              // task.toggleTaskCompleted(props.id);
+
+
            }
         });
     }
